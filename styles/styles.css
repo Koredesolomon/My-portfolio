@@ -184,9 +184,11 @@ section {
   object-fit: cover;
   transition: all 0.4s ease-in-out;
   filter: grayscale(100%);
+  -webkit-filter:;
 }
 .header-content .left-header .image img:hover {
   filter: grayscale(0);
+  -webkit-filter:;
 }
 .header-content .right-header {
   display: flex;
@@ -265,27 +267,29 @@ section {
   width: 60%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .html {
-  width: 80%;
+  width: 98%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .css {
-  width: 95%;
+  width: 98%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .js {
-  width: 75%;
+  width: 85%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 60%;
+  width: 80%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .node {
-  width: 60%;
+  width: 75%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .python {
-  width: 50%;
+  width: 70%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .next {
-  width: 60%;
+  width: 80%;
 }
-
+.about-stats .progress-bars .progress-bar .progress-con .progress .wordpress {
+  width: 95%;
+}
 .stat-title {
   text-transform: uppercase;
   font-size: 1.4rem;
