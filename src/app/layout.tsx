@@ -9,6 +9,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains" }
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://korekodes-portfolio.netlify.app"),
   title: `${site.name} — ${site.role}`,
   description: site.intro,
 };
