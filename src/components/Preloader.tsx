@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const HOT = "#ff5a36";
-const HOLD_MS = 4300; // when the exit starts
+const HOLD_MS = 6800; // when the exit starts
 const EXIT_MS = 900;
 
 function Words({ text, start, hot = false }: { text: string; start: number; hot?: boolean }) {
@@ -14,7 +14,7 @@ function Words({ text, start, hot = false }: { text: string; start: number; hot?
         <span
           key={i}
           className="mword"
-          style={{ transitionDelay: `${(start + i) * 110}ms`, color: hot ? HOT : undefined }}
+          style={{ transitionDelay: `${(start + i) * 190}ms`, color: hot ? HOT : undefined }}
         >
           {w}
           {" "}
@@ -88,7 +88,7 @@ export default function Preloader() {
 
         <div className="flex flex-col justify-start px-[8%] pt-6 md:justify-center md:pb-0 md:pl-0 md:pr-[8%] md:pt-0">
           <span className="mbar mb-8 block h-[5px] w-20 origin-left" style={{ background: HOT }} />
-          <p className="mfade text-base text-muted sm:text-lg md:text-xl" style={{ transitionDelay: "150ms" }}>
+          <p className="mfade text-base text-muted sm:text-lg md:text-xl" style={{ transitionDelay: "400ms" }}>
             If you think the price of winning is too high,
           </p>
           <h2 className="mt-6 whitespace-nowrap text-[7vw] font-extrabold leading-[1.02] tracking-tight md:text-[4vw]">
@@ -99,7 +99,7 @@ export default function Preloader() {
               <Words text="bill for regret." start={8} hot />
             </span>
           </h2>
-          <p className="mfade mt-8 text-base sm:text-lg" style={{ transitionDelay: "1700ms" }}>
+          <p className="mfade mt-8 text-base sm:text-lg" style={{ transitionDelay: "3600ms" }}>
             The bill for regret is generational
           </p>
         </div>

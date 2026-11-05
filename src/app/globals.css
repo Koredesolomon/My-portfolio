@@ -264,7 +264,7 @@ html[data-leaving] .preloader {
 }
 .preloader.in .preloader-bar {
   width: 100%;
-  transition: width 4.3s linear;
+  transition: width 6.8s linear;
 }
 html[data-loading] {
   overflow: hidden;
@@ -277,4 +277,17 @@ html[data-loading] .rise {
   .preloader {
     display: none;
   }
+}
+
+.preloader .mword {
+  transition-duration: 1.1s;
+}
+.preloader .mfade {
+  transition-duration: 1.4s;
+}
+.preloader .mbar {
+  transition-duration: 1.4s;
+}
+.preloader .kenburns {
+  animation-duration: 12s;
 }
