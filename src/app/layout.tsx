@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import Preloader from "@/components/Preloader";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -16,8 +17,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} ${mono.variable} ${ghost.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable} ${mono.variable} ${ghost.variable}`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(!sessionStorage.getItem('preloaded')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.dataset.loading='1'}catch(e){}",
+          }}
+        />
+      </head>
       <body>
+        <Preloader />
         <noscript>
           <style>{".reveal,.rise,.timeline-line,.dot{opacity:1!important;transform:none!important}"}</style>
         </noscript>

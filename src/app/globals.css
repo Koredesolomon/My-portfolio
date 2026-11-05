@@ -183,3 +183,98 @@ body {
     animation: none;
   }
 }
+
+/* ---- manifesto band ---- */
+.manifesto-photo {
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+  mask-image: linear-gradient(to bottom, #000 62%, transparent);
+}
+@media (min-width: 768px) {
+  .manifesto-photo {
+    -webkit-mask-image: linear-gradient(to right, #000 55%, transparent);
+    mask-image: linear-gradient(to right, #000 55%, transparent);
+  }
+}
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(-2.5%, -2%, 0);
+  }
+}
+.kenburns {
+  animation: kenburns 16s ease-in-out infinite alternate;
+  transform-origin: 60% 40%;
+}
+.mword {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.45em);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mfade {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mbar {
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.in .mword,
+.in .mfade {
+  opacity: 1;
+  transform: none;
+}
+.in .mbar {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .kenburns {
+    animation: none;
+  }
+  .mword,
+  .mfade,
+  .mbar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---- preloader ---- */
+.preloader {
+  display: none;
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+}
+html[data-loading] .preloader,
+html[data-leaving] .preloader {
+  display: block;
+}
+.preloader.exit {
+  transform: translateY(-100%);
+}
+.preloader-bar {
+  width: 0;
+}
+.preloader.in .preloader-bar {
+  width: 100%;
+  transition: width 4.3s linear;
+}
+html[data-loading] {
+  overflow: hidden;
+}
+/* hold the hero animations until the preloader lifts */
+html[data-loading] .rise {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    display: none;
+  }
+}
